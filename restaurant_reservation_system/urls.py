@@ -25,6 +25,7 @@ ADMIN_URLS = [
 
 LOCAL_APPS_URLS = [
     path("api/user/", include("apps.user.urls")),
+    path("api/book/", include("apps.reserve.urls")),
 ]
 
 urlpatterns = ADMIN_URLS + LOCAL_APPS_URLS

@@ -143,3 +143,5 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = "user.User"
+
+SEAT_COST = 10.0
