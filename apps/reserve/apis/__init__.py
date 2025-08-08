@@ -1,1 +1,1 @@
-from .reserve import ReserveAPIView
+from .reserve import ReserveAPIView, CancelReserveAPIView
