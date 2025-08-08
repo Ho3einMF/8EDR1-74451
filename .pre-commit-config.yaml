@@ -1,0 +1,25 @@
+repos:
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.12
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+      # Run the formatter.
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: check-missing-migrations
+        name: Check for missing Django migrations
+        entry: >
+          bash -c '
+            echo "🔍 Checking for missing migrations...";
+            python manage.py makemigrations --check --dry-run || {
+              echo "❌ Missing migrations! Run: python manage.py makemigrations";
+              exit 1;
+            }
+          '
+        language: system
+        types: [ python ]
