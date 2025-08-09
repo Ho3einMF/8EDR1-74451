@@ -15,8 +15,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd <project-directory>
+    git clone https://github.com/Ho3einMF/8EDR1-74451.git
+    cd 8EDR1-74451 :)
     ```
 
 2.  **Create your environment file:**
@@ -40,5 +40,10 @@ These instructions will get you a copy of the project up and running on your loc
     ```
     Follow the prompts to create your superuser account.
 
-5.  **Access the application:**
-    You can now access the application at [http://localhost:80](http://localhost:80) and the Django admin panel at [http://localhost:80/admin/](http://localhost:80/admin/).
+   5.  **Access the application:**<br>
+        - **Application**: [http://localhost:80/](http://localhost:80)
+        - **Admin Panel**: [http://localhost:80/admin/](http://localhost:80/admin/)
+
+### API Documentation:
+- Swagger: [http://localhost:80/api/docs/swagger/](http://localhost:80/api/docs/swagger/)
+- Redoc: [http://localhost:80/api/docs/redoc/](http://localhost:80/api/docs/redoc/)
