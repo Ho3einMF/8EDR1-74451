@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Third Party Packages
     "rest_framework",
     "rest_framework_simplejwt",
+    "drf_spectacular",
     # Local Apps
     "apps.reserve",
     "apps.user",
@@ -148,6 +149,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 AUTH_USER_MODEL = "user.User"
@@ -156,3 +158,10 @@ SEAT_COST = 10.0
 
 STATIC_ROOT = "static"
 MEDIA_ROOT = "media"
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Restaurant Reservation",
+    "DESCRIPTION": "Restaurant Reservation API",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}

@@ -17,7 +17,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+    SpectacularRedocView,
+)
 
+from restaurant_reservation_system import settings
 
 ADMIN_URLS = [
     path("admin/", admin.site.urls),
@@ -29,3 +35,22 @@ LOCAL_APPS_URLS = [
 ]
 
 urlpatterns = ADMIN_URLS + LOCAL_APPS_URLS
+
+if settings.DEBUG:
+    urlpatterns.extend(
+        [
+            # YOUR PATTERNS
+            path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+            # Optional UI:
+            path(
+                "api/docs/swagger/",
+                SpectacularSwaggerView.as_view(url_name="schema"),
+                name="swagger-ui",
+            ),
+            path(
+                "api/docs/redoc/",
+                SpectacularRedocView.as_view(url_name="schema"),
+                name="redoc",
+            ),
+        ]
+    )
